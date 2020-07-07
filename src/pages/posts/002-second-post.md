@@ -4,6 +4,9 @@ date: 2018-12-02 07:00:00
 author: 'Yizhou Zeng'
 path: '/second-post'
 image: '../../images/thumbnail.jpg'
+tags:
+- code
+- design
 ---
 
 Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhh. Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhh. Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhh. Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhh. Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhh. Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhh.
