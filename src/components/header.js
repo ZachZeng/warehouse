@@ -34,23 +34,25 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar fixed="top" expand="sm">
-          <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink href="/team">Team</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/tags">Tags</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/about">About</NavLink>
-              </NavItem>
-            </Nav>
-            <NavbarText>Simple Text</NavbarText>
-          </Collapse>
+        <Navbar fixed="top" color="light" light expand="sm">
+          <div className="container">
+            <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="mr-auto" navbar>
+                <NavItem>
+                  <NavLink href="/team">Team</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/tags">Tags</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/about">About</NavLink>
+                </NavItem>
+              </Nav>
+              <NavbarText>Simple Text</NavbarText>
+            </Collapse>
+          </div>
         </Navbar>
       </div>
     );
