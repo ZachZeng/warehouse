@@ -10,9 +10,8 @@ const SinglePost = ({ data }) => {
   const post = data.markdownRemark.frontmatter
 
   return (
-    <Layout>
+    <Layout pageTitle={post.title}>
       <SEO title={post.title} />
-      <h1>{post.title}</h1>
       <Card>
         <Img
           className="card-image-top"

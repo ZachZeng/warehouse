@@ -6,9 +6,8 @@ import PostCard from "../components/PostCard"
 import { Row, Col } from "reactstrap"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="WAREHOUSE">
     <SEO title="Home" />
-    <h1>Home page</h1>
     <StaticQuery
       query={indexQuery}
       render={data => {
