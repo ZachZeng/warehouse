@@ -34,12 +34,8 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar fixed="top" color="light" light expand="sm">
-          <div className="container">
+        <Nav style={{position:"fixed"}} vertical>
             <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="mr-auto" navbar>
                 <NavItem>
                   <NavLink href="/team">Team</NavLink>
                 </NavItem>
@@ -49,11 +45,7 @@ class Header extends React.Component {
                 <NavItem>
                   <NavLink href="/about">About</NavLink>
                 </NavItem>
-              </Nav>
-              <NavbarText>Simple Text</NavbarText>
-            </Collapse>
-          </div>
-        </Navbar>
+        </Nav>
       </div>
     );
   }
