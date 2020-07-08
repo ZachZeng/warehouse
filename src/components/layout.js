@@ -33,12 +33,12 @@ const Layout = ({ children, pageTitle }) => {
         crossOrigin="anonymous"
       ></link>
       <Row>
-        <Col xs="2">
+        <Col md="2">
           <Header siteTitle={data.site.siteMetadata.title} />
         </Col>
-        <Col xs="4">
+        <Col md="8">
           <div className="container" id="content">
-            <h1>{pageTitle}</h1>
+            <h1 className="text-left">{pageTitle}</h1>
             <main>{children}</main>
           </div>
           <Footer />
