@@ -8,12 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import "../styles/index.scss"
-import Footer from "./Footer"
-import Header from "./Header"
-import { Row, Col } from "reactstrap"
+import { SideNav, Content } from "../components"
+import { LayoutWrapper } from "../elements"
 
-const Layout = ({ children, pageTitle }) => {
+export const Layout = ({ children, pageTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,31 +23,19 @@ const Layout = ({ children, pageTitle }) => {
   `)
 
   return (
-    <>
+    <LayoutWrapper>
       <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
         crossOrigin="anonymous"
       ></link>
-      <Row>
-        <Col md="2">
-          <Header siteTitle={data.site.siteMetadata.title} />
-        </Col>
-        <Col md="8">
-          <div className="container" id="content">
-            <h1 className="text-left">{pageTitle}</h1>
-            <main>{children}</main>
-          </div>
-          <Footer />
-        </Col>
-      </Row>
-    </>
+      <SideNav siteTitle={data.site.siteMetadata.title} />
+      <Content pageTitle={pageTitle}>{children}</Content>
+    </LayoutWrapper>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-export default Layout

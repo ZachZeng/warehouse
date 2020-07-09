@@ -1,7 +1,7 @@
 import React from "react"
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap"
 
-const PaginationLinks = ({ currentPage, numOfPages }) => {
+export const PaginationLinks = ({ currentPage, numOfPages }) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numOfPages
   const prevPage = `/page/${currentPage - 1}`
@@ -30,5 +30,3 @@ const PaginationLinks = ({ currentPage, numOfPages }) => {
     </Pagination>
   )
 }
-
-export default PaginationLinks

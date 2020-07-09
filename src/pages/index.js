@@ -1,8 +1,6 @@
 import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import { Layout, SEO, PostCard } from "../components"
 import { graphql, StaticQuery } from "gatsby"
-import PostCard from "../components/PostCard"
 import { Row, Col } from "reactstrap"
 
 const IndexPage = () => (

@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `WAREHOUSE`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `ZachZeng's blog recording interesting thoughts`,
+    author: `ZachZeng`,
   },
   plugins: [
+    //for seo head
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,6 +14,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
+    //filesystem
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,6 +23,8 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
+
+    //image
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -37,8 +42,14 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
     `gatsby-transformer-remark`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    //fonts
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`muli\:300,400,700,800`],
+        display: `swap`,
+      },
+    },
   ],
 }

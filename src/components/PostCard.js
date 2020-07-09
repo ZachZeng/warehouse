@@ -11,7 +11,7 @@ import {
 import Img from "gatsby-image"
 import { slugify } from "../utils/utilityFunctions"
 
-const PostCard = ({ title, author, slug, date, body, fluid, tags }) => {
+export const PostCard = ({ title, author, slug, date, body, fluid, tags }) => {
   return (
     <Card>
       <Link to={slug}>
@@ -39,5 +39,3 @@ const PostCard = ({ title, author, slug, date, body, fluid, tags }) => {
     </Card>
   )
 }
-
-export default PostCard
