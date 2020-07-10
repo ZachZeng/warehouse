@@ -34,5 +34,6 @@ export default {
 
   shadows: {
     shadow1: "0 0 30px rgba(0,0,0,0.5)",
+    projectShadow: "0 0 30px rgba(0,0,0,0.14)",
   },
 }

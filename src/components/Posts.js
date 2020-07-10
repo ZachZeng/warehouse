@@ -3,7 +3,7 @@ import { PostsWrapper } from "../elements"
 import { PostCard } from "../components"
 
 export const Posts = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   return (
     <PostsWrapper>
       <h1

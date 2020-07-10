@@ -8,7 +8,7 @@ export const PostCardWrapper = styled(props => <Link {...props} />)`
   grid-template-columns: 10rem 4fr 2fr;
   background-color: ${props => props.theme.colors.dark2};
   width: 100%;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 1.7rem;
   transition: ${props => props.theme.animations.cards};
 
   & {
@@ -24,6 +24,7 @@ export const PostCardWrapper = styled(props => <Link {...props} />)`
     display: block;
     padding: 1rem 1.5rem;
     padding-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 `
 

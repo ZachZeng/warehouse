@@ -1,49 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 import {
-  Card,
-  CardTitle,
-  CardText,
-  CardSubtitle,
-  CardBody,
-  Badge,
-} from "reactstrap"
-import Img from "gatsby-image"
-import { slugify } from "../utils/utilityFunctions"
+  ProjectCardWrapper,
+  ProjectCardImage,
+  ProjectCardTime,
+  ProjectCardBody,
+  ProjectCardTitle,
+} from "../elements"
 
-export const ProjectCard = ({
-  title,
-  author,
-  slug,
-  date,
-  body,
-  fluid,
-  tags,
-}) => {
+export const ProjectCard = ({ title, date, body, fluid }) => {
   return (
-    <Card>
-      <Link to={slug}>
-        <Img className="card-image-top" fluid={fluid} />
-        <CardBody>
-          <CardTitle>{title}</CardTitle>
-          <CardSubtitle>
-            <span className="text-info">{date}</span> by{" "}
-            <span className="text-info">{author}</span>
-          </CardSubtitle>
-          <CardText>{body}</CardText>
-          <ul className="post-tags">
-            {tags.map(tag => (
-              <li key={tag}>
-                <Link to={`/tag/${slugify(tag)}`}>
-                  <Badge color="primary" className="text-uppercase">
-                    {tag}
-                  </Badge>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </CardBody>
-      </Link>
-    </Card>
+    <ProjectCardWrapper to={"/"}>
+      <ProjectCardImage fluid={fluid} />
+      <ProjectCardTitle>{title}</ProjectCardTitle>
+      <ProjectCardTime>{date}</ProjectCardTime>
+      <ProjectCardBody>{body}</ProjectCardBody>
+    </ProjectCardWrapper>
   )
 }

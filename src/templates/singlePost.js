@@ -22,10 +22,6 @@ const SinglePost = ({ data, pageContext }) => {
     <Layout>
       <SEO title={post.title} />
       <Card>
-        <Img
-          className="card-image-top"
-          fluid={post.image.childImageSharp.fluid}
-        />
         <CardBody>
           <CardSubtitle>
             <span className="text-info">{post.date}</span> by{" "}

@@ -8,7 +8,7 @@ export const NavButtonWrapper = styled(props => <Link {...props} />)`
   display: flex;
   justify-content: space-between;
   overflow: auto;
-  max-width: 15rem;
+  max-width: 13rem;
   text-decoration: none;
 
   @media ${props => props.theme.breakpoints.tablet} {
