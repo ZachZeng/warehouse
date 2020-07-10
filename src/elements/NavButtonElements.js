@@ -21,6 +21,7 @@ export const NavButtonText = styled.p`
     props.active ? props.theme.colors.light1 : props.theme.colors.dark3};
   font-size: 1.25rem;
   text-decoration: none;
+  transition: ${props => props.theme.animations.nav};
 
   ${NavButtonWrapper}:hover & {
     color: ${props => props.theme.colors.light1};
@@ -43,6 +44,7 @@ export const NavButtonImg = styled.div`
   -webkit-mask: url(${props => props.src}) no-repeat center;
   mask: url(${props => props.src}) no-repeat center;
   mask-size: 100%;
+  transition: ${props => props.theme.animations.nav};
 
   ${NavButtonWrapper}:hover & {
     background-color: ${props => props.theme.colors.light1};

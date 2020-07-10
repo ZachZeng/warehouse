@@ -28,7 +28,7 @@ export default {
 
   animations: {
     cards: "all 0.3s ease",
-    button: "box-shadow 0.3s ease",
+    nav: "all 0.3s ease",
     link: "color 0.2s ease",
   },
 
