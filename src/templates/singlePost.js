@@ -1,7 +1,6 @@
 import React from "react"
-import Layout from "../components/Layout"
+import { Layout, SEO } from "../components"
 import { graphql, Link } from "gatsby"
-import SEO from "../components/seo"
 import { Row, Col, Badge, Card, CardBody, CardSubtitle } from "reactstrap"
 import Img from "gatsby-image"
 import { slugify } from "../utils/utilityFunctions"
@@ -20,7 +19,7 @@ const SinglePost = ({ data, pageContext }) => {
   }
 
   return (
-    <Layout pageTitle={post.title}>
+    <Layout>
       <SEO title={post.title} />
       <Card>
         <Img

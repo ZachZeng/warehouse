@@ -4,7 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { Row, Col } from "reactstrap"
 
 const IndexPage = () => (
-  <Layout pageTitle="WAREHOUSE">
+  <Layout page="home">
     <SEO title="Home" />
     <StaticQuery
       query={indexQuery}

@@ -8,13 +8,20 @@ import {
   CardBody,
   Badge,
 } from "reactstrap"
-import { PostCardWrapper } from "../elements"
 import Img from "gatsby-image"
 import { slugify } from "../utils/utilityFunctions"
 
-export const PostCard = ({ title, author, slug, date, body, fluid, tags }) => {
+export const ProjectCard = ({
+  title,
+  author,
+  slug,
+  date,
+  body,
+  fluid,
+  tags,
+}) => {
   return (
-    <PostCardWrapper>
+    <Card>
       <Link to={slug}>
         <Img className="card-image-top" fluid={fluid} />
         <CardBody>
@@ -37,6 +44,6 @@ export const PostCard = ({ title, author, slug, date, body, fluid, tags }) => {
           </ul>
         </CardBody>
       </Link>
-    </PostCardWrapper>
+    </Card>
   )
 }

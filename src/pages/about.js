@@ -2,7 +2,7 @@ import React from "react"
 import { Layout, SEO } from "../components"
 
 const AboutPage = () => (
-  <Layout pageTitle="About us">
+  <Layout>
     <SEO title="About" />
     <p>
       Labore esse incididunt quis exercitation. Aliqua aliquip amet officia anim

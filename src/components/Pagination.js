@@ -1,32 +1,21 @@
 import React from "react"
-import { Pagination, PaginationItem, PaginationLink } from "reactstrap"
+import { Link } from "gatsby"
+import { PaginationWrapper } from "../elements"
 
-export const PaginationLinks = ({ currentPage, numOfPages }) => {
+export const Pagination = ({ currentPage, numOfPages }) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numOfPages
   const prevPage = `/page/${currentPage - 1}`
   const nextPage = `/page/${currentPage + 1}`
   return (
-    <Pagination aria-label="Page navigation">
+    <PaginationWrapper>
       {isFirst ? (
-        <PaginationItem disabled>
-          <PaginationLink previous href="/"></PaginationLink>
-        </PaginationItem>
+        <Link previous href="/"></Link>
       ) : (
-        <PaginationItem>
-          <PaginationLink previous href={prevPage} />
-        </PaginationItem>
+        <Link previous href={prevPage} />
       )}
 
-      {isLast ? (
-        <PaginationItem disabled>
-          <PaginationLink next href="/" />
-        </PaginationItem>
-      ) : (
-        <PaginationItem>
-          <PaginationLink next href={nextPage} />
-        </PaginationItem>
-      )}
-    </Pagination>
+      {isLast ? <Link next href="/" /> : <Link next href={nextPage} />}
+    </PaginationWrapper>
   )
 }

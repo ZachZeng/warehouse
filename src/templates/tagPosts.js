@@ -1,10 +1,8 @@
 import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { Button, Badge } from "reactstrap"
 import { slugify } from "../utils/utilityFunctions"
-import PostCard from "../components/PostCard"
+import { SEO, Layout, PostCard } from "../components"
 
 const TagPosts = ({ data, pageContext }) => {
   const { tag } = pageContext
@@ -14,7 +12,7 @@ const TagPosts = ({ data, pageContext }) => {
   } tagged with "${tag}"`
 
   return (
-    <Layout pageTitle={pageHeader}>
+    <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostCard
           key={node.id}

@@ -7,6 +7,8 @@ module.exports = {
   plugins: [
     //for seo head
     `gatsby-plugin-react-helmet`,
+
+    //filesystem
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,13 +16,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-
-    //filesystem
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `files`,
+        path: `${__dirname}/src/files`,
       },
     },
 

@@ -5,6 +5,8 @@ author: "Zach Zeng"
 image: "../../images/thumbnail.jpg"
 tags:
   - code
+  - design
+  - game
 ---
 
 Welcome to my blog!

@@ -1,13 +1,12 @@
 import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import { SEO, Layout } from "../components"
 import { Button, Badge } from "reactstrap"
 import { slugify } from "../utils/utilityFunctions"
 
 const TagsPage = ({ pageContext }) => {
   const { tags, tagPostCounts } = pageContext
   return (
-    <Layout pageTitle="Tags">
+    <Layout>
       <SEO title="All tags" keyword={["tags"]} />
       <ul>
         {tags.map(tag => (

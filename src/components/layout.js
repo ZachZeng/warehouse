@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { SideNav, Content } from "../components"
 import { LayoutWrapper } from "../elements"
 
-export const Layout = ({ children, pageTitle }) => {
+export const Layout = ({ children, page }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,8 +30,8 @@ export const Layout = ({ children, pageTitle }) => {
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
         crossOrigin="anonymous"
       ></link>
-      <SideNav siteTitle={data.site.siteMetadata.title} />
-      <Content pageTitle={pageTitle}>{children}</Content>
+      <SideNav page={page} />
+      <Content>{children}</Content>
     </LayoutWrapper>
   )
 }

@@ -29,7 +29,6 @@ exports.createPages = ({ actions, graphql }) => {
     singlePost: path.resolve("src/templates/singlePost.js"),
     tagsPage: path.resolve("src/templates/tagsPage.js"),
     tagPosts: path.resolve("src/templates/tagPosts.js"),
-    postList: path.resolve("src/templates/postList.js"),
   }
 
   return graphql(`
@@ -38,7 +37,6 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              author
               tags
             }
             fields {
@@ -51,7 +49,11 @@ exports.createPages = ({ actions, graphql }) => {
   `).then(res => {
     if (res.errors) return Promise.reject(res.errors)
 
-    const posts = res.data.allMarkdownRemark.edges
+    const all = res.data.allMarkdownRemark.edges
+    const posts = all.filter(post => post.node.frontmatter.tags != ["project"])
+    const projects = all.filter(
+      post => post.node.frontmatter.tags == ["project"]
+    )
 
     //create single blog post pages
     posts.forEach(({ node }) => {
@@ -96,25 +98,6 @@ exports.createPages = ({ actions, graphql }) => {
         component: templates.tagPosts,
         context: {
           tag,
-        },
-      })
-    })
-
-    const postsPerPage = 2
-    const numOfPages = Math.ceil(posts.length / postsPerPage)
-
-    Array.from({ length: numOfPages }).forEach((_, index) => {
-      const isFirstPage = index === 0
-      const currentPage = index + 1
-
-      createPage({
-        path: `/page/${currentPage}`,
-        component: templates.postList,
-        context: {
-          limit: postsPerPage,
-          skip: index * postsPerPage,
-          currentPage,
-          numOfPages,
         },
       })
     })
