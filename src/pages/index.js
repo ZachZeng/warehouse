@@ -1,56 +1,61 @@
 import React from "react"
-import { Layout, SEO, PostCard } from "../components"
+import { Layout, SEO, Projects, Posts, ProjectCard } from "../components"
 import { graphql, StaticQuery } from "gatsby"
 import { Row, Col } from "reactstrap"
 
-const IndexPage = () => (
-  <Layout page="home">
-    <SEO title="Home" />
-    <StaticQuery
-      query={indexQuery}
-      render={data => {
-        return (
-          <div>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
-              <PostCard
-                key={node.id}
-                title={node.frontmatter.title}
-                author={node.frontmatter.author}
-                slug={node.fields.slug}
-                date={node.frontmatter.date}
-                body={node.excerpt}
-                fluid={node.frontmatter.image.childImageSharp.fluid}
-                tags={node.frontmatter.tags}
-              />
-            ))}
-          </div>
-        )
-      }}
-    />
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  const posts = data.posts.edges
+  const projects = data.projects.edges
+  return (
+    <Layout page="home">
+      <SEO title="Home" />
+      <Posts data={posts} />
+      <Projects data={projects} />
+    </Layout>
+  )
+}
 
-const indexQuery = graphql`
+export const indexQuery = graphql`
   query MyQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    posts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { ne: "project" } } }
+      limit: 5
+    ) {
       edges {
         node {
           id
           frontmatter {
             author
-            date(formatString: "MMM Do YYYY")
+            date(formatString: "MMM DD, YYYY")
             title
             tags
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { eq: "project" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            author
+            date(formatString: "MMM DD, YYYY")
+            title
             image {
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 700) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-          }
-          fields {
-            slug
           }
           excerpt
         }

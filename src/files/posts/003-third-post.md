@@ -1,11 +1,11 @@
 ---
-title: "First Post - Introduction"
-date: 2018-12-01 07:00:00
+title: "Third Post - WOW"
+date: 2019-12-03 07:00:00
 author: "Zach Zeng"
 tags:
   - code
   - design
-  - game
+  - react
 ---
 
 Welcome to my blog!

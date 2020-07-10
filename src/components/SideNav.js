@@ -29,14 +29,7 @@ export const SideNav = ({ page }) => {
       </Link>
       <div className="NavButtons">
         <NavButton
-          href="/team"
-          icon={data.home.publicURL}
-          active={page === "home"}
-        >
-          Home
-        </NavButton>
-        <NavButton
-          href="/tags"
+          href="/blog"
           icon={data.blog.publicURL}
           active={page === "blog"}
         >

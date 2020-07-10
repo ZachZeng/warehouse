@@ -7,12 +7,20 @@ import { SEO, Layout, PostCard } from "../components"
 const TagPosts = ({ data, pageContext }) => {
   const { tag } = pageContext
   const { totalCount } = data.allMarkdownRemark
-  const pageHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  const pageHeader = `Tag: ${tag}`
 
   return (
     <Layout>
+      <h1
+        style={{
+          fontSize: "3.125rem",
+          marginBottom: "2rem",
+          fontWeight: "800",
+          color: "#E7F0FF",
+        }}
+      >
+        {pageHeader}
+      </h1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostCard
           key={node.id}
@@ -21,7 +29,6 @@ const TagPosts = ({ data, pageContext }) => {
           slug={node.fields.slug}
           date={node.frontmatter.date}
           body={node.excerpt}
-          fluid={node.frontmatter.image.childImageSharp.fluid}
           tags={node.frontmatter.tags}
         />
       ))}
@@ -44,13 +51,6 @@ export const tagQuery = graphql`
             date(formatString: "MMM Do YYYY")
             author
             tags
-            image {
-              childImageSharp {
-                fluid(maxWidth: 650, maxHeight: 370) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
           fields {
             slug
