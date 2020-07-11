@@ -11,7 +11,7 @@ import { slugify } from "../utils/utilityFunctions"
 
 export const PostCard = ({ title, slug, date, tags }) => {
   return (
-    <PostCardWrapper to={slug}>
+    <PostCardWrapper to={`/${slug}`}>
       <PostCardTime>{date}</PostCardTime>
       <PostCardTitle>{title}</PostCardTitle>
       <PostCardTags>

@@ -81,16 +81,6 @@ exports.createPages = ({ actions, graphql }) => {
 
     tags = _.uniq(tags)
 
-    //create tags page
-    createPage({
-      path: "/tags",
-      component: templates.tagsPage,
-      context: {
-        tags,
-        tagPostCounts,
-      },
-    })
-
     //create tag post page
     tags.forEach(tag => {
       createPage({

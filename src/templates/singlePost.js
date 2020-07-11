@@ -1,45 +1,41 @@
-import React from "react"
-import { Layout, SEO } from "../components"
-import { graphql, Link } from "gatsby"
-import { Row, Col, Badge, Card, CardBody, CardSubtitle } from "reactstrap"
-import Img from "gatsby-image"
+import React, { useEffect } from "react"
+import { graphql } from "gatsby"
 import { slugify } from "../utils/utilityFunctions"
-import { DiscussionEmbed } from "disqus-react"
+import { Layout, SEO } from "../components"
+import {
+  H1,
+  SUBTITLE,
+  PostCardTags,
+  PostCardTag,
+  ArticleWrapper,
+} from "../elements"
+import Prism from "prismjs"
+import "../themes/language-theme.css"
 
-const SinglePost = ({ data, pageContext }) => {
+const SinglePost = ({ data }) => {
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
+
   const post = data.markdownRemark.frontmatter
-
-  const baseUrl = "https://zachzeng.com/warehouse/"
-
-  const disqusShortname = "zachzeng-warehouse"
-  const disqusConfig = {
-    identifier: data.markdownRemark.id,
-    title: post.title,
-    url: baseUrl + pageContext.slug,
-  }
 
   return (
     <Layout>
       <SEO title={post.title} />
-      <Card>
-        <CardBody>
-          <CardSubtitle>
-            <span className="text-info">{post.date}</span> by{" "}
-            <span className="text-info">{post.author}</span>
-          </CardSubtitle>
-          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-          <ul className="post-tags">
-            {post.tags.map(tag => (
-              <li key={tag}>
-                <Link to={`/tags/${slugify(tag)}`}>
-                  <Badge color="primary">{tag}</Badge>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </CardBody>
-      </Card>
-      <h3 className="text-center">Share this post</h3>
+      <H1>{post.title}</H1>
+      <SUBTITLE>{post.date}</SUBTITLE>
+      <PostCardTags>
+        {post.tags &&
+          post.tags.map(tag => (
+            <PostCardTag to={`/tag/${slugify(tag)}`} key={tag} tag={tag}>
+              {tag}
+            </PostCardTag>
+          ))}
+      </PostCardTags>
+      <ArticleWrapper>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      </ArticleWrapper>
+      {/* <h3 className="text-center">Share this post</h3>
       <div className="text-center social-share-links">
         <ul>
           <li>
@@ -89,8 +85,7 @@ const SinglePost = ({ data, pageContext }) => {
             </a>
           </li>
         </ul>
-      </div>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      </div> */}
     </Layout>
   )
 }

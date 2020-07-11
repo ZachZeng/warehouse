@@ -16,6 +16,7 @@ export const PostCardWrapper = styled(props => <Link {...props} />)`
   }
 
   &:hover {
+    z-index: 10;
     box-shadow: ${props => props.theme.shadows.shadow1};
     transform: scale(1.01, 1.01);
   }
@@ -60,7 +61,8 @@ export const PostCardTags = styled.div`
 
 export const PostCardTag = styled(props => <Link {...props} />)`
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 300;
   padding: 0.2rem 0.4rem;
   background-color: rgba(0, 0, 0, 0);
   color: ${props => {
@@ -77,8 +79,8 @@ export const PostCardTag = styled(props => <Link {...props} />)`
   }};
 
   border: 1px solid ${props => props.theme.colors.light1};
-  border-radius: 0.4rem;
-  margin: 0.2rem;
+  border-radius: 0.2rem;
+  margin: 0.25rem;
   border-color: ${props => {
     switch (props.tag) {
       case "code":

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Button, Badge } from "reactstrap"
 import { slugify } from "../utils/utilityFunctions"
-import { SEO, Layout, PostCard } from "../components"
+import { SEO, Layout, Posts } from "../components"
 
 const TagPosts = ({ data, pageContext }) => {
   const { tag } = pageContext
@@ -21,17 +21,7 @@ const TagPosts = ({ data, pageContext }) => {
       >
         {pageHeader}
       </h1>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <PostCard
-          key={node.id}
-          title={node.frontmatter.title}
-          author={node.frontmatter.author}
-          slug={node.fields.slug}
-          date={node.frontmatter.date}
-          body={node.excerpt}
-          tags={node.frontmatter.tags}
-        />
-      ))}
+      <Posts data={data.allMarkdownRemark.edges} />
     </Layout>
   )
 }

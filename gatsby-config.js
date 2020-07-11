@@ -31,6 +31,18 @@ module.exports = {
       },
     },
 
+    //markdown
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
+        ],
+      },
+    },
+
     //image
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
