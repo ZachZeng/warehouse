@@ -15,7 +15,8 @@ export const PostCardWrapper = styled(props => <Link {...props} />)`
     text-decoration: none;
   }
 
-  &:hover {
+  &:hover,
+  :focus {
     z-index: 10;
     box-shadow: ${props => props.theme.shadows.shadow1};
     transform: scale(1.01, 1.01);
@@ -95,7 +96,8 @@ export const PostCardTag = styled(props => <Link {...props} />)`
   }};
   transition: ${props => props.theme.animations.cards};
 
-  &:hover {
+  &:hover,
+  :focus {
     color: ${props => {
       switch (props.tag) {
         case "code":

@@ -25,40 +25,41 @@ export const Search = ({ posts, location, navigate }) => {
 
   return (
     <>
-      <SearchbarWrapper
-        id="search"
-        type="search"
-        placeholder="Search all posts"
-        value={query}
-        onChange={e => {
-          navigate(e.target.value ? `/blog/?search=${e.target.value}` : "")
-          setQuery(e.target.value)
-        }}
-      />
-      <section>
-        {query ? (
-          results.length > 0 ? (
-            <PostsWrapper>
-              {results.map(d => (
-                <PostCard
-                  key={d.id}
-                  title={d.title}
-                  slug={d.slug}
-                  date={d.date}
-                  tags={d.tags}
-                />
-              ))}
-            </PostsWrapper>
-          ) : (
-            <H2>
-              Sorry, nothing is found... please search for another word like
-              "react"{" "}
-            </H2>
-          )
+      <SearchbarWrapper>
+        <input
+          id="search"
+          type="search"
+          placeholder="Search all posts"
+          value={query}
+          onChange={e => {
+            navigate(e.target.value ? `/blog/?search=${e.target.value}` : "")
+            setQuery(e.target.value)
+          }}
+        />
+      </SearchbarWrapper>
+
+      {query ? (
+        results.length > 0 ? (
+          <PostsWrapper>
+            {results.map(d => (
+              <PostCard
+                key={d.id}
+                title={d.title}
+                slug={d.slug}
+                date={d.date}
+                tags={d.tags}
+              />
+            ))}
+          </PostsWrapper>
         ) : (
-          <Posts data={posts} />
-        )}
-      </section>
+          <H2>
+            Sorry, nothing is found... please search for another word like
+            "react"{" "}
+          </H2>
+        )
+      ) : (
+        <Posts data={posts} />
+      )}
     </>
   )
 }

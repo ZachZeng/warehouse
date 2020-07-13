@@ -1,6 +1,6 @@
 ---
-title: "Build a Blog with Gatsby and React"
-date: 2020-1-3 07:00:00
+title: "Build a Blog with Gatsby and React 2"
+date: 2020-1-4 07:00:00
 author: "Zach Zeng"
 tags:
   - game

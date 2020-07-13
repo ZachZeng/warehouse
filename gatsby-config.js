@@ -27,7 +27,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `files`,
-        path: `${__dirname}/src/files`,
+        path: `${__dirname}/src/files/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `files`,
+        path: `${__dirname}/src/files/projects`,
       },
     },
 
@@ -37,7 +44,15 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-highlight-code`,
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+              wrapperStyle: `
+                margin: 4rem auto;
+                box-shadow: 0 0 30px rgba(0,0,0,0.5);
+              `,
+              markdownCaptions: true,
+            },
           },
         ],
       },
@@ -60,7 +75,6 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
-    `gatsby-transformer-remark`,
 
     //fonts
     {
@@ -77,7 +91,11 @@ module.exports = {
       options: {
         name: "pages",
         engine: "flexsearch",
-        engineOptions: "speed",
+        engineOptions: {
+          encode: "icase",
+          tokenize: "forward",
+          async: false,
+        },
         query: `
         {
           allMarkdownRemark(

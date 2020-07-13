@@ -10,6 +10,7 @@ export const ArticleWrapper = styled.article`
   p {
     ${sharedStyle.sharedStyleP}
   }
+
   @media ${props => props.theme.breakpoints.tablet} {
   }
 `
