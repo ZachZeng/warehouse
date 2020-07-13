@@ -4,6 +4,7 @@ module.exports = {
     description: `ZachZeng's blog recording interesting thoughts`,
     author: `ZachZeng`,
   },
+  pathPrefix: "/warehouse",
   plugins: [
     //for seo head
     `gatsby-plugin-react-helmet`,
@@ -130,5 +131,8 @@ module.exports = {
           })),
       },
     },
+
+    //animation
+    `gatsby-plugin-transition-link`,
   ],
 }

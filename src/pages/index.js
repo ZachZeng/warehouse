@@ -1,7 +1,6 @@
 import React from "react"
-import { Layout, SEO, Projects, Posts, ProjectCard } from "../components"
-import { graphql, StaticQuery } from "gatsby"
-import { Row, Col } from "reactstrap"
+import { Layout, SEO, Projects, Posts } from "../components"
+import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   const posts = data.posts.edges

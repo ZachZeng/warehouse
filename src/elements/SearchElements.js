@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import React from "react"
 
 export const SearchbarWrapper = styled.label`
   display: flex;

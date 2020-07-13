@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { SideNavWrapper } from "../elements"
-import { NavButton } from "."
+import { NavButton } from "../components"
 
 export const SideNav = ({ page }) => {
   const data = useStaticQuery(graphql`
@@ -21,10 +21,9 @@ export const SideNav = ({ page }) => {
     }
   `)
 
-  const currentPage = page
   return (
     <SideNavWrapper>
-      <Link to="/" className="logo">
+      <Link to="/" fade className="logo">
         <img src={data.logo.publicURL} alt="My logo" />
       </Link>
       <div className="NavButtons">

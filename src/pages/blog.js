@@ -1,8 +1,6 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Layout, SEO, Posts, Search } from "../components"
-import { useFlexSearch } from "react-use-flexsearch"
-import * as queryString from "query-string"
+import React from "react"
+import { graphql } from "gatsby"
+import { Layout, SEO, Search } from "../components"
 import { TITLE } from "../elements"
 
 const BlogPage = ({ data, ...props }) => {

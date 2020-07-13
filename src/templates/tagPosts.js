@@ -1,13 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Button, Badge } from "reactstrap"
-import { slugify } from "../utils/utilityFunctions"
-import { SEO, Layout, Posts } from "../components"
+import { Layout, Posts } from "../components"
 import { TITLE } from "../elements"
 
 const TagPosts = ({ data, pageContext }) => {
   const { tag } = pageContext
-  const { totalCount } = data.allMarkdownRemark
   const pageHeader = `Tag: ${tag}`
 
   return (

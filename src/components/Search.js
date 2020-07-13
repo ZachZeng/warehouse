@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Layout, SEO, Posts, PostCard } from "../components"
+import { Posts, PostCard } from "../components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
 import { PostsWrapper, SearchbarWrapper, H2 } from "../elements"
