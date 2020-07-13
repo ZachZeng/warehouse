@@ -1,14 +1,18 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Layout, SEO } from "../components"
+import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { Layout, SEO, Posts, Search } from "../components"
+import { useFlexSearch } from "react-use-flexsearch"
+import * as queryString from "query-string"
+import { TITLE } from "../elements"
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, ...props }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout page="blog">
-      <SEO title="Team" />
-      <h1>All blog</h1>
+      <SEO title="Blog" />
+      <TITLE>All blog</TITLE>
+      <Search posts={posts} {...props} />
     </Layout>
   )
 }

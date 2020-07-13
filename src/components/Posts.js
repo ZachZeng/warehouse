@@ -1,23 +1,12 @@
 import React from "react"
-import { PostsWrapper } from "../elements"
+import { PostsWrapper, TITLE } from "../elements"
 import { PostCard } from "../components"
 
 export const Posts = ({ data, title }) => {
   // console.log(data)
   return (
     <PostsWrapper>
-      {title && (
-        <h1
-          style={{
-            fontSize: "3.125rem",
-            marginBottom: "2rem",
-            fontWeight: "800",
-            color: "#E7F0FF",
-          }}
-        >
-          Latest
-        </h1>
-      )}
+      {title && <TITLE>Latest</TITLE>}
 
       {data.map(d => (
         <PostCard

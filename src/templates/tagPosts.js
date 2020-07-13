@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Button, Badge } from "reactstrap"
 import { slugify } from "../utils/utilityFunctions"
 import { SEO, Layout, Posts } from "../components"
+import { TITLE } from "../elements"
 
 const TagPosts = ({ data, pageContext }) => {
   const { tag } = pageContext
@@ -11,16 +12,7 @@ const TagPosts = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <h1
-        style={{
-          fontSize: "3.125rem",
-          marginBottom: "2rem",
-          fontWeight: "800",
-          color: "#E7F0FF",
-        }}
-      >
-        {pageHeader}
-      </h1>
+      <TITLE>{pageHeader}</TITLE>
       <Posts data={data.allMarkdownRemark.edges} />
     </Layout>
   )

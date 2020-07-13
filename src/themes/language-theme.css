@@ -6,21 +6,21 @@
 
 :root {
   --code-font-family: Menlo, "Roboto Mono", Courier New, monospace;
-  --code-font-color: #b3b9c5;
-  --code-background-color: #161616;
-  --string: #92d192;
-  --variable: #f2777a;
-  --property: #abb2bf;
-  --number: #fca369;
-  --operator: #ac8d58;
-  --punctuation: #d5d8df;
+  --code-font-color: #eb5665;
+  --code-background-color: #262c35;
+  --string: #74a95d;
+  --variable: #eb5665;
+  --property: #ffffff;
+  --number: #bc7f4d;
+  --operator: #9da6b5;
+  --punctuation: #9da6b5;
   --comment: #848991;
-  --function: #62cfcf;
-  --keyword: #ffeead;
-  --attribute: #ffd479;
-  --class: #e1a6f2;
-  --tag: #6ab0f3;
-  --error: #f2777a;
+  --function: #39a4f0;
+  --keyword: #cd66df;
+  --attribute: #ff0086;
+  --class: #ffffff;
+  --tag: #fb660a;
+  --error: #ffffff;
   --light-background: #f1f3f5;
 }
 
@@ -164,6 +164,7 @@ pre.language-terminal::before {
 
 .token.number {
   color: var(--number);
+  font-weight: bold;
 }
 
 .token.char,

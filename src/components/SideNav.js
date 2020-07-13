@@ -36,7 +36,7 @@ export const SideNav = ({ page }) => {
           Blog
         </NavButton>
         <NavButton
-          href="/about"
+          href="/playground"
           icon={data.playground.publicURL}
           active={page === "playground"}
         >

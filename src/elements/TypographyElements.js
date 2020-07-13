@@ -9,6 +9,10 @@ export const H1 = styled.h1`
   ${sharedStyle.sharedStyleH1}
 `
 
+export const TITLE = styled.h1`
+  ${sharedStyle.sharedStyleTitle}
+`
+
 export const SUBTITLE = styled.p`
   ${sharedStyle.sharedStyleSUBTITLE}
 `

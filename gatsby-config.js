@@ -70,5 +70,47 @@ module.exports = {
         display: `swap`,
       },
     },
+
+    //search
+    {
+      resolve: `gatsby-plugin-local-search`,
+      options: {
+        name: "pages",
+        engine: "flexsearch",
+        engineOptions: "speed",
+        query: `
+        {
+          allMarkdownRemark(
+            filter: { frontmatter: { tags: { ne: "project" } } }
+          ) {
+            nodes {
+              id
+              frontmatter {
+                title
+                tags
+                date(formatString: "MMMM DD,YYYY")
+              }
+              fields {
+                slug
+              }
+              rawMarkdownBody
+            }
+          }
+        }
+        `,
+        ref: "id",
+        index: ["title", "body", "tags"],
+        store: ["id", "slug", "title", "tags", "date"],
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map(node => ({
+            id: node.id,
+            slug: node.fields.slug,
+            title: node.frontmatter.title,
+            body: node.rawMarkdownBody,
+            tags: node.frontmatter.tags,
+            date: node.frontmatter.date,
+          })),
+      },
+    },
   ],
 }
