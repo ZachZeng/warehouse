@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
 import { Posts, PostCard } from "../components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
 import { PostsWrapper, SearchbarWrapper, H2 } from "../elements"
 
-export const Search = ({ posts, location, navigate }) => {
+export const Search = ({ posts, location }) => {
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || "")
   const { localSearchPages } = useStaticQuery(graphql`

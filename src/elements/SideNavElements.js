@@ -4,7 +4,8 @@ export const SideNavWrapper = styled.header`
   grid-area: nav;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
+  padding: 3rem;
+  padding-top: 5rem;
   overflow: auto;
   border-right: 2px solid ${props => props.theme.colors.dark2};
 

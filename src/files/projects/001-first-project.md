@@ -7,4 +7,4 @@ tags:
   - project
 ---
 
-Welcome to my blog!
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis et enim id mattis. Nam dignissim, neque id viverra lacinia.
