@@ -44,7 +44,9 @@ export const ProjectCardTitle = styled.div`
   margin: 1.8rem 0;
   margin-bottom: 0.5rem;
   color: ${props => props.theme.colors.light1};
-
+  @media ${props => props.theme.breakpoints.mobile} {
+    margin-top: 1rem;
+  }
   @media ${props => props.theme.breakpoints.tablet} {
   }
 `
@@ -57,6 +59,9 @@ export const ProjectCardTime = styled.div`
   margin-bottom: 1.5rem;
   color: ${props => props.theme.colors.light2};
   @media ${props => props.theme.breakpoints.tablet} {
+  }
+  @media ${props => props.theme.breakpoints.mobile} {
+    margin-bottom: 0.5rem;
   }
 `
 
