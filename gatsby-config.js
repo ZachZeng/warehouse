@@ -4,7 +4,7 @@ module.exports = {
     description: `ZachZeng's blog recording interesting thoughts`,
     author: `ZachZeng`,
   },
-  pathPrefix: "/warehouse",
+  pathPrefix: `/warehouse`,
   plugins: [
     //for seo head
     `gatsby-plugin-react-helmet`,
