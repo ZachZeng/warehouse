@@ -6,7 +6,7 @@
 
 :root {
   --code-font-family: Menlo, "Roboto Mono", Courier New, monospace;
-  --code-font-color: #eb5665;
+  --code-font-color: #fff;
   --code-background-color: #262c35;
   --string: #74a95d;
   --variable: #eb5665;
@@ -16,6 +16,7 @@
   --punctuation: #9da6b5;
   --comment: #848991;
   --function: #39a4f0;
+  --builtin: #ffcb6b;
   --keyword: #cd66df;
   --attribute: #ff0086;
   --class: #ffffff;
@@ -84,8 +85,8 @@ pre[class*="language-"] {
 
 pre.language-text,
 code.language-text {
-  background: var(--light-background) !important;
-  color: #333 !important;
+  background: var(--code-background-color) !important;
+  color: var(--light-background) !important;
   box-shadow: none;
 }
 
@@ -126,7 +127,7 @@ pre.language-terminal::before {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #191919;
+  background-color: var(--code-background-color);
   display: block;
   margin-right: -1rem;
   margin-left: -1rem;
@@ -168,10 +169,13 @@ pre.language-terminal::before {
 }
 
 .token.char,
-.token.builtin,
 .token.url,
 .token.inserted {
   color: var(--code-font-color);
+}
+
+.token.builtin {
+  color: var(--builtin);
 }
 
 .token.attr-name,

@@ -9,14 +9,9 @@ import {
   PostCardTag,
   ArticleWrapper,
 } from "../elements"
-import Prism from "prismjs"
 import "../themes/language-theme.css"
 
 const SinglePost = ({ data }) => {
-  useEffect(() => {
-    Prism.highlightAll()
-  }, [])
-
   const post = data.markdownRemark.frontmatter
 
   return (

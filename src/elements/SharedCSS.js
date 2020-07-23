@@ -113,3 +113,87 @@ export const sharedStyleH2 = css`
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
   margin: ${props => (props.margin ? props.margin : "2rem 0")};
 `
+
+export const sharedStyleH3 = css`
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-style: italic;
+  color: ${props => {
+    switch (props.color) {
+      case "dark1":
+        return props.theme.colors.dark1
+      case "dark2":
+        return props.theme.colors.dark2
+      case "dark3":
+        return props.theme.colors.dark3
+      case "light1":
+        return props.theme.colors.light1
+      case "light2":
+        return props.theme.colors.light2
+      default:
+        return props.theme.colors.light1
+    }
+  }};
+  font-weight: 300;
+  text-align: ${props => (props.textAlign ? props.textAlign : "left")};
+  margin: ${props => (props.margin ? props.margin : "1rem 0")};
+`
+
+export const sharedStyleH4 = css`
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: ${props => {
+    switch (props.color) {
+      case "dark1":
+        return props.theme.colors.dark1
+      case "dark2":
+        return props.theme.colors.dark2
+      case "dark3":
+        return props.theme.colors.dark3
+      case "light1":
+        return props.theme.colors.light1
+      case "light2":
+        return props.theme.colors.light2
+      default:
+        return props.theme.colors.light1
+    }
+  }};
+  font-weight: 700;
+  text-align: ${props => (props.textAlign ? props.textAlign : "left")};
+  margin: ${props => (props.margin ? props.margin : ".5rem 0")};
+`
+
+export const sharedStyleH5 = css`
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: ${props => {
+    switch (props.color) {
+      case "dark1":
+        return props.theme.colors.dark1
+      case "dark2":
+        return props.theme.colors.dark2
+      case "dark3":
+        return props.theme.colors.dark3
+      case "light1":
+        return props.theme.colors.light1
+      case "light2":
+        return props.theme.colors.light2
+      default:
+        return props.theme.colors.light1
+    }
+  }};
+  font-weight: 700;
+  text-align: ${props => (props.textAlign ? props.textAlign : "left")};
+  margin: ${props => (props.margin ? props.margin : ".3rem 0")};
+`
+
+export const sharedStyleList = css`
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+  li {
+    margin: 1.5rem 0;
+  }
+  p {
+    margin: 0;
+  }
+`
