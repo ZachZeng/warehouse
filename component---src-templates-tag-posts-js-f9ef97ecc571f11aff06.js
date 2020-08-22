@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{cNYZ:function(e,a,t){"use strict";t.r(a),t.d(a,"tagQuery",(function(){return l}));var n=t("q1tI"),r=t.n(n),u=t("Kvkj"),c=t("GR5B"),l="2231918832";a.default=function(e){var a=e.data,t="Tag: "+e.pageContext.tag;return r.a.createElement(u.b,null,r.a.createElement(c.A,null,t),r.a.createElement(u.f,{data:a.allMarkdownRemark.edges}))}}}]);
+//# sourceMappingURL=component---src-templates-tag-posts-js-f9ef97ecc571f11aff06.js.map
